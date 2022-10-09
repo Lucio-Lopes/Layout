@@ -1,0 +1,176 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    font-size: 14px;
+    font-family: roboto, sans-serif;
+    width: 100%;
+    min-height:100vh;
+    user-select: none;
+}
+.header{
+    background:black;
+    display: flex;
+    color:white;
+    justify-content: space-around;
+    align-items: center;
+    padding:1rem;
+    width: 100%;
+    height: 4rem;
+}
+.logo{
+    width: 150px;
+    
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    gap:1.5rem;
+}
+nav ul li a{
+    color: white;
+    font-size: 1rem;
+    padding:5px 8px;
+    border-radius:5px;
+}
+nav ul li a:hover{
+    background:white;
+    color:black;
+}
+nav #close-btn{
+    display: none;
+}
+#menu{
+    display: none;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+/* SECTION */
+
+img{
+    max-width: 100%;
+    display: block;
+    min-width: 10rem;
+}
+.flexbox{
+    max-width:80%;
+    margin:0 auto;
+    margin-top:2rem;
+    display: flex;
+    gap:1rem;
+    flex-wrap: wrap;
+    color:	#A9A9A9;
+}
+.shadow img{
+    box-shadow: 5px 5px 10px black;
+    transition:0.3s;
+}
+.shadow img:hover{
+    box-shadow: none;
+}
+.flexbox > div{
+    flex:1 1 20rem;
+}
+.flexbox h3{
+    text-align: center;
+    margin-top:1rem;
+}
+
+/* grid2 */
+.article{
+    text-align: center;
+    margin-top: 3rem;
+    color:#87CEFA;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    max-width: 80%;
+    margin:0 auto;
+    gap:1rem;
+    margin-top:3rem;
+    color:#A9A9A9;
+}
+.grid > div{
+    text-align: center;
+}
+.grid > div:nth-child(n+2){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.grid div h3{
+    margin-left:1rem;
+}
+.anuncio{
+    display: flex;
+    grid-row:1/4;
+    display: block;
+    text-align: center;
+    
+}
+
+footer{
+    text-align: center;
+    font-weight: 500;
+    margin-top:2rem;
+    font-size: 1rem;
+    color:#A9A9A9;
+}
+
+@media (max-width:1200px){
+    .grid{ 
+        grid-template-columns: 1fr 1fr;
+
+    }
+    .anuncio{
+        grid-row: 1/3;
+        grid-column: 1/3;
+    }
+    .grid > div{
+        display: block!important;
+    }
+}
+@media (max-width:768px){
+    .grid{
+        display: block;
+    }
+    #menu{
+        display: block;
+    }
+    .header{
+        justify-content: space-between;
+    }
+    #sidemenu{
+        position: absolute;
+        width:100%;
+        top:4rem;
+        background-color: black;
+        height: max-content;
+        left: 0;
+        display: block;
+        visibility: hidden;
+        animation: showMenu 400ms ease;
+    }
+    nav ul li{
+        padding:1rem;
+        border-top:1px solid white ;
+    }
+    nav ul li:hover{
+        background-color: white;
+    }
+    nav ul li a{
+        padding: 0;
+    }
+    nav ul li:hover a{
+        color:black;
+    }
+    nav #sidemenu.active{
+        visibility: visible;
+    }
+}
